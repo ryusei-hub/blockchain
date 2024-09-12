@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simulation</title>
+        
+    </head>
+
+    <script type = "text/javascript">
+        function zoom(){
+            var beeCoin = document.getElementById("title");
+            beeCoin.classList.add("animation");
+
+            beeCoin.addEventListener("animationend", function(){
+                var hidden = document.getElementById("hidden");
+                hidden.style.visibility = "visible";
+
+                hidden = document.getElementById("hiddenBee");
+                hidden.style.visibility = "visible";
+            })
+        }
+
+        
+
+    </script>
+    <style>
+        .animation {
+            animation: zoomer 1.5s linear;
+            text-align: center;
+        }
+
+        @keyframes zoomer {
+            0% {
+                font-size: 300px;
+            }
+            100% {
+                font-size: 30px;
+            }
+        }
+
+        #title{
+            font-family: 'Papyrus';
+        }
+
+        #hidden,
+        #hiddenBee{
+            visibility: hidden;
+        }
+
+
+        
+    </style>
+
+    <body onload="zoom()">
+        <h1 id="title">BeeCoin<img src="BeeImage.png" alt="BeeCoin" style="width: 50px; height: auto;" id="hiddenBee"></h1>
+        <div id="hidden">
+            <p>Blockchain</p>
+        </div>
+    </body>
+</html>
